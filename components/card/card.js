@@ -1,7 +1,6 @@
-// const cardContainer = document.querySelector('[data-js="card-container"]');
-
 export function createCharacterCard() {
   const characterCard = document.createElement("li");
+  characterCard.innerHTML = "";
   characterCard.innerHTML = `<div class="card__image-container">
     <img
       class="card__image"
@@ -21,6 +20,6 @@ export function createCharacterCard() {
       <dd class="card__info-description">51</dd>
     </dl>
   </div>`;
-  characterCard.classList("card");
-  cardContainer.characterCard.append("li");
+  characterCard.classList.add("card");
+  return characterCard;
 }
