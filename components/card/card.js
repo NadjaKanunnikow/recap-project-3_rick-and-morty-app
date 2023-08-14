@@ -1,4 +1,4 @@
-export function createCharacterCard(data) {
+export default function createCharacterCard(data) {
   const characterCard = document.createElement("li");
   characterCard.innerHTML = `<div class="card__image-container">
     <img
