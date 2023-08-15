@@ -23,6 +23,7 @@ async function fetchCharacters() {
   const data = await response.json();
   const characters = data.results;
   maxPage = data.info.pages;
+  pagination.textContent = `${page}/${maxPage}`;
   cardContainer.innerHTML = "";
   characters.forEach((character) => {
     const newCard = createCharacterCard(character);
@@ -35,6 +36,7 @@ prevButton.addEventListener("click", () => {
   if (page > 1) {
     page--;
   }
+  fetchCharacters();
   // else if (page === 1) {
   //   prevButton.getAttribute("disabled");
   // }
@@ -45,4 +47,5 @@ nextButton.addEventListener("click", () => {
   if (page < maxPage) {
     page++;
   }
+  fetchCharacters();
 });
