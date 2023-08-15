@@ -37,10 +37,6 @@ prevButton.addEventListener("click", () => {
     page--;
   }
   fetchCharacters();
-  // else if (page === 1) {
-  //   prevButton.getAttribute("disabled");
-  // }
-  // prevButtone.disabled = true;
 });
 
 nextButton.addEventListener("click", () => {
