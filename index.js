@@ -17,6 +17,7 @@ let searchQuery = "";
 
 //Fetch Data
 async function fetchCharacters() {
+  cardContainer.innerHTML = "";
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`
   );
@@ -24,7 +25,6 @@ async function fetchCharacters() {
   const characters = data.results;
   maxPage = data.info.pages;
   pagination.textContent = `${page}/${maxPage}`;
-  cardContainer.innerHTML = "";
   characters.forEach((character) => {
     const newCard = createCharacterCard(character);
     cardContainer.append(newCard);
